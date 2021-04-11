@@ -57,8 +57,8 @@ int main(void) {
    }
 
      //C7 iff tmpA4 && tmpA5 && !tmpA6
-     if(tmpA4 && tmpA5 && !tmpA6){
-        PORTC = tmpC || 0x80; //retain existing 1s
+     if((tmpA4 && tmpA5) && !tmpA6){
+        PORTC = tmpC | 0x80; //retain existing 1s
 
      }
 
