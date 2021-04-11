@@ -47,9 +47,8 @@ int main(void) {
 
 
     }
-
-    PORTC = count;
-
+     PORTC = count;
+     count = 0;
 }
 
 return 1;
