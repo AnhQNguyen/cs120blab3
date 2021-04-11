@@ -15,7 +15,7 @@
 int main(void) {
 
   //initialize ports
-  DDRA = 0x00; PORTA = 0x0FF;
+  DDRA = 0x00; PORTA = 0xFF;
   DDRC = 0x00; PORTC = 0x00;
 
   //temporary variables
