@@ -26,27 +26,24 @@ int main(void) {
   while(1) {
     tmpA = PINA;
       if(tmpA >= 0x01 && tmpA <= 0x02) {
-          tmpC = 0x60; //C5 and C6
+          PORTC = 0x60; //C5 and C6
       }
       else if(tmpA >= 0x03 && tmpA <= 0x04) {
-        tmpC = 0x70; //C5C4 and C6
+        PORTC = 0x70; //C5C4 and C6
 
       }
       else if(tmpA >= 0x05 && tmpA <= 0x06) {
-        tmpC = 0x38; //C5C4C3
+        PORTC = 0x38; //C5C4C3
       }
       else if(tmpA >= 0x07 && tmpA <= 0x09) {
-        tmpC = 0x3C; //C5C4C3C2
+        PORTC = 0x3C; //C5C4C3C2
       }
       else if(tmpA >= 0x0A && tmpA <= 0x0C) {
-        tmpC = 0x3E; //C5C4C3C2C1
+        PORTC = 0x3E; //C5C4C3C2C1
       }
       else if(tmpA >= 0x0D && tmpA <= 0x0F) {
-        tmpC = 0x3F; //C5C4C3C2C1C0
+        PORTC = 0x3F; //C5C4C3C2C1C0
       }
-
-
-      PORTC = tmpC;
 
   }
 
