@@ -24,8 +24,9 @@ int main(void) {
 
 
   while(1) {
-    tmpA = PINA;
-      if(tmpA >= 0x01 && tmpA <= 0x02) {
+    tmpA = PINA & 0x0F;
+    
+      if((tmpA >= 0x01 && tmpA <= 0x02)) {
           PORTC = 0x60; //C5 and C6
       }
       else if(tmpA >= 0x03 && tmpA <= 0x04) {
@@ -44,6 +45,10 @@ int main(void) {
       else if(tmpA >= 0x0D && tmpA <= 0x0F) {
         PORTC = 0x3F; //C5C4C3C2C1C0
       }
+    else {
+        PORTC = 0x40;
+      
+    }
 
   }
 
