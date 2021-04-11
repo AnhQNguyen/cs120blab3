@@ -22,7 +22,7 @@ unsigned char GetBit(unsigned char x, unsigned char k) {
 int main(void) {
 
   //initialize ports
-  DDRA = 0x00; PORTA = 0x0FF;
+  DDRA = 0x00; PORTA = 0xFF;
   DDRB = 0x00; PORTB = 0xFF;
   DDRC = 0x00; PORTC = 0x00;
 
@@ -31,8 +31,8 @@ int main(void) {
   unsigned char tmpB = 0x00;
 
   //misc.
-  unsigned char i = 0;
-  unsigned char count = 0;
+  unsigned char i = 0x00;
+  unsigned char count = 0x00;
 
   while(1) {
     tmpA = PINA;
