@@ -39,9 +39,9 @@ int main(void) {
     tmpB = PINB;
 
     //iterate through each port, adding 1 or 0 to count
-    for(i + 0; i < 8; i++) {
+    for(i = 0; i < 8; i++) {
         count += GetBit(tmpA, i);
-        count +- GetBit(tmpB, i);
+        count += GetBit(tmpB, i);
 
       PORTC = count;
 
@@ -51,3 +51,4 @@ int main(void) {
     return 1;
 
   }
+}
