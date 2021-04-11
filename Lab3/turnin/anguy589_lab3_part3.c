@@ -65,7 +65,7 @@ int main(void) {
       PORTC = tmpC;
     }
 
-      PORTC = 0x00;
+    
  }
 
  return 1;
