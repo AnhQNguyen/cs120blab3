@@ -31,7 +31,6 @@ int main(void) {
   tmpA6 = PINA & 0x40;
 
    tmpA = PINA & 0x0F; //clear A6-A4, bc we only care about A3-A0
-   tmpC = 0x00;
 
      if(tmpA >= 0x01 && tmpA <= 0x02) {
          tmpC = 0x60; //C5 and C6
@@ -63,7 +62,7 @@ int main(void) {
 
      }
     else {
-      PORTC = PORTC;
+      PORTC = tmpC;
     }
 
       PORTC = 0x00;
