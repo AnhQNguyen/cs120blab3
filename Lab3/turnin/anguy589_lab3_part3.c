@@ -31,28 +31,29 @@ int main(void) {
   tmpA6 = PINA & 0x40;
 
    tmpA = PINA & 0x0F; //clear A6-A4, bc we only care about A3-A0
+   tmpC = 0x00;
 
      if(tmpA >= 0x01 && tmpA <= 0x02) {
-         PORTC = 0x60; //C5 and C6
+         tmpC = 0x60; //C5 and C6
      }
      else if(tmpA >= 0x03 && tmpA <= 0x04) {
-       PORTC = 0x70; //C5C4 and C6
+       tmpC = 0x70; //C5C4 and C6
 
      }
      else if(tmpA >= 0x05 && tmpA <= 0x06) {
-       PORTC = 0x38; //C5C4C3
+       tmpC = 0x38; //C5C4C3
      }
      else if(tmpA >= 0x07 && tmpA <= 0x09) {
-       PORTC = 0x3C; //C5C4C3C2
+       tmpC = 0x3C; //C5C4C3C2
      }
      else if(tmpA >= 0x0A && tmpA <= 0x0C) {
-       PORTC = 0x3E; //C5C4C3C2C1
+       tmpC = 0x3E; //C5C4C3C2C1
      }
      else if(tmpA >= 0x0D && tmpA <= 0x0F) {
-       PORTC = 0x3F; //C5C4C3C2C1C0
+       tmpC = 0x3F; //C5C4C3C2C1C0
      }
-   else {
-      PORTC = 0x40;
+     else {
+      tmpC = 0x40;
    
    }
 
@@ -61,8 +62,11 @@ int main(void) {
         PORTC = tmpC | 0x80; //retain existing 1s
 
      }
+    else {
+      PORTC = PORTC;
+    }
 
-
+      PORTC = 0x00;
  }
 
  return 1;
